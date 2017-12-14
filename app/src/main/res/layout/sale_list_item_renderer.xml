@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sale Date:"
+        android:textSize="23dp"/>
+    <TextView
+        android:id="@+id/sale_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="date"
+        android:textSize="23dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#c0c0c0"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Client:"
+        android:textSize="23dp"/>
+    <TextView
+        android:id="@+id/client_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/name"
+        android:textSize="23dp"/>
+
+    <TextView
+        android:id="@+id/client_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/address"
+        android:textSize="23dp"/>
+    <TextView
+        android:id="@+id/client_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/phone"
+        android:textSize="23dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#c0c0c0"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Customer:"
+        android:textSize="23dp"/>
+    <TextView
+        android:id="@+id/customer_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/name"
+        android:textSize="23dp"/>
+
+    <TextView
+        android:id="@+id/customer_position"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="position"
+        android:textSize="23dp"/>
+    <TextView
+        android:id="@+id/customer_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/phone"
+        android:textSize="23dp"/>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#c0c0c0"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Car:"
+        android:textSize="23dp"/>
+    <TextView
+        android:id="@+id/car_brand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="brand"
+        android:textSize="23dp"/>
+
+    <TextView
+        android:id="@+id/car_model"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="model"
+        android:textSize="23dp"/>
+    <TextView
+        android:id="@+id/car_year"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="year"
+        android:textSize="23dp"/>
+    <TextView
+        android:id="@+id/car_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="color"
+        android:textSize="23dp"/>
+    <TextView
+        android:id="@+id/car_kilometers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="kilometers"
+        android:textSize="23dp"/>
+    <TextView
+        android:id="@+id/car_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="price"
+        android:textSize="23dp"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#c0c0c0"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Credit Card:"
+        android:textSize="23dp"/>
+
+    <TextView
+        android:id="@+id/creditCard_company"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="service company"
+        android:textSize="23dp"/>
+    <TextView
+        android:id="@+id/creditCard_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="number"
+        android:textSize="23dp"/>
+    <TextView
+        android:id="@+id/creditCard_expiration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="expiration"
+        android:textSize="23dp"/>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="#c0c0c0"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Insurance type:"
+        android:textSize="23dp"/>
+
+    <TextView
+        android:id="@+id/insurance_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="insurarer"
+        android:textSize="23dp"/>
+    <TextView
+        android:id="@+id/insurance_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="value"
+        android:textSize="23dp"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="4dp"
+        android:background="#c0c0c0"/>
+
+
+</LinearLayout>

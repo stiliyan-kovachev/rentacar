@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/name"
+        android:hint="@string/name"/>
+
+  <!--  <Spinner
+        android:id="@+id/spinCountry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </Spinner>-->
+
+   <!-- <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Spinner
+            android:id="@+id/spinCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </Spinner>-->
+
+        <EditText
+            android:id="@+id/egn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="EGN"/>
+    <!--</LinearLayout>-->
+
+    <EditText
+        android:id="@+id/address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/address"/>
+
+    <EditText
+        android:id="@+id/driving_license_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="driving license number"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/dl_exp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DL expiration"/>
+        <TextView
+            android:id="@+id/dl_exp_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.0"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/confirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:padding="20dp"
+        android:text="@string/confirm" />
+
+</LinearLayout>

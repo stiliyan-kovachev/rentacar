@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context="com.stiliyan.phonebook.phonebook.MainActivity"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="cars saled from customer after date"
+            android:textSize="23dp"/>
+
+        <Button
+            android:id="@+id/salesFromCustomer"
+            android:text="click"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="last 5 sales ordered by price"
+            android:textSize="23dp"/>
+        <Button
+            android:id="@+id/lastFiveSales"
+            android:text="click"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="bought cars from client"
+            android:textSize="23dp"/>
+
+        <Button
+            android:id="@+id/boughtFromClient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="click" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="sales for period"
+            android:textSize="23dp"/>
+
+        <Button
+            android:id="@+id/salesForPeriod"
+            android:text="click"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="cars insurated with insurance type"
+            android:textSize="23dp"/>
+
+        <Button
+            android:id="@+id/insuratedCars"
+            android:text="click"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

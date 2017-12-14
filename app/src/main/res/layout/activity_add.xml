@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context="com.stiliyan.phonebook.phonebook.MainActivity"
+    tools:context="rentacar.stiliyan.com.rentacar.MainActivity"
     android:weightSum="1">
 
     <LinearLayout
@@ -14,28 +14,47 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/add"
-            android:text="add"
+            android:id="@+id/addClient"
+            android:text="add client"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             />
         <Button
-            android:id="@+id/viewSales"
-            android:text="view sales"
+            android:id="@+id/addCustomer"
+            android:text="add customer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             />
-
         <Button
-            android:id="@+id/inquiries"
-            android:text="inquiries"
+            android:id="@+id/addCar"
+            android:text="add car"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             />
-
+        <Button
+            android:id="@+id/addCreditCard"
+            android:text="add credit card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            />
+        <Button
+            android:id="@+id/addInsurance"
+            android:text="add insurance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            />
+        <Button
+            android:id="@+id/addSale"
+            android:text="make sale"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            />
 
 
     </LinearLayout>

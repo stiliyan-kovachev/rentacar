@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Car:"
+        android:textSize="23dp"/>
+    <TextView
+        android:id="@+id/car_brand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="brand"
+        android:textSize="23dp"/>
+
+    <TextView
+        android:id="@+id/car_model"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="model"
+        android:textSize="23dp"/>
+    <TextView
+        android:id="@+id/car_year"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="year"
+        android:textSize="23dp"/>
+    <TextView
+        android:id="@+id/car_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="color"
+        android:textSize="23dp"/>
+    <TextView
+        android:id="@+id/car_kilometers"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="kilometers"
+        android:textSize="23dp"/>
+    <TextView
+        android:id="@+id/car_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="price"
+        android:textSize="23dp"/>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="4dp"
+        android:background="#c0c0c0"/>
+
+
+</LinearLayout>
