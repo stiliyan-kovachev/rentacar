@@ -27,12 +27,7 @@
         android:layout_height="wrap_content"
         android:text="number of sits"
         android:textSize="23dp"/>
-    <TextView
-        android:id="@+id/car_kilometers"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="kilometers"
-        android:textSize="23dp"/>
+
     <TextView
         android:id="@+id/car_space_luggage"
         android:layout_width="match_parent"
