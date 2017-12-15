@@ -9,11 +9,8 @@ import android.widget.Button;
 public class AddActivity extends AppCompatActivity {
 
     private Button addClientBtn;
-    private Button addCustomerBtn;
     private Button addCarBtn;
-    private Button addCreditCard;
-    private Button addInsurance;
-    private Button addSaleBtn;
+    private Button addRentBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,24 +18,13 @@ public class AddActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add);
 
         addClientBtn = ( Button ) findViewById( R.id.addClient );
-        addCustomerBtn = ( Button ) findViewById( R.id.addCustomer );
         addCarBtn = ( Button ) findViewById( R.id.addCar );
-        addCreditCard = ( Button ) findViewById( R.id.addCreditCard );
-        addInsurance = ( Button ) findViewById( R.id.addInsurance );
-        addSaleBtn = ( Button ) findViewById( R.id.addSale );
+        addRentBtn = ( Button ) findViewById( R.id.addSale );
 
         addClientBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick( View view ) {
                 Intent intent = new Intent( AddActivity.this, AddClientActivity.class );
-                startActivity( intent );
-            }
-        });
-
-        addCustomerBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick( View view ) {
-                Intent intent = new Intent( AddActivity.this, AddCustomerActivity.class );
                 startActivity( intent );
             }
         });
@@ -51,23 +37,7 @@ public class AddActivity extends AppCompatActivity {
             }
         });
 
-        addCreditCard.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick( View view ) {
-                Intent intent = new Intent( AddActivity.this, AddCreditcardActivity.class );
-                startActivity( intent );
-            }
-        });
-
-        addInsurance.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick( View view ) {
-                Intent intent = new Intent( AddActivity.this, AddInsuranceActivity.class );
-                startActivity( intent );
-            }
-        });
-
-        addSaleBtn.setOnClickListener(new View.OnClickListener() {
+        addRentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick( View view ) {
                 Intent intent = new Intent( AddActivity.this, AddRentActivity.class );

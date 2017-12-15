@@ -19,11 +19,9 @@ public class InquiriesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inquiries);
 
-        salesFromCustomerBtrn = (Button) findViewById(R.id.salesFromCustomer);
         lastFiveSalesBtrn = (Button) findViewById(R.id.lastFiveSales);
         boughtFromClientBtn = (Button) findViewById(R.id.boughtFromClient);
         salesForPeriodBtn = (Button) findViewById(R.id.salesForPeriod);
-        carsInsuratedBtn = (Button) findViewById(R.id.insuratedCars);
 
         lastFiveSalesBtrn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,29 +39,14 @@ public class InquiriesActivity extends AppCompatActivity {
             }
         });
 
-        salesFromCustomerBtrn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent( InquiriesActivity.this, SaledCarsFromCustomerActivity.class );
-                startActivity( intent );
-            }
-        });
-
         boughtFromClientBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent( InquiriesActivity.this, BoghtCarsByClientActivity.class );
+                Intent intent = new Intent( InquiriesActivity.this, RentedCarsByClientActivity.class );
                 startActivity( intent );
             }
         });
 
-        carsInsuratedBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent( InquiriesActivity.this, CarsInsuratedActivity.class );
-                startActivity( intent );
-            }
-        });
     }
 
 }

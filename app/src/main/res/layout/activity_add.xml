@@ -20,13 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             />
-        <Button
-            android:id="@+id/addCustomer"
-            android:text="add customer"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            />
+
         <Button
             android:id="@+id/addCar"
             android:text="add car"
@@ -35,22 +29,8 @@
             android:layout_margin="5dp"
             />
         <Button
-            android:id="@+id/addCreditCard"
-            android:text="add credit card"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            />
-        <Button
-            android:id="@+id/addInsurance"
-            android:text="add insurance"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            />
-        <Button
             android:id="@+id/addSale"
-            android:text="make sale"
+            android:text="add rent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"

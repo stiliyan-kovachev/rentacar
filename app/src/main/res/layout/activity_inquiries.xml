@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context="com.stiliyan.phonebook.phonebook.MainActivity"
+    tools:context=".InquiriesActivity"
     android:weightSum="1">
 
     <LinearLayout
@@ -16,21 +16,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="cars saled from customer after date"
-            android:textSize="23dp"/>
-
-        <Button
-            android:id="@+id/salesFromCustomer"
-            android:text="click"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="last 5 sales ordered by price"
+            android:text="last 5 rents ordered by price"
             android:textSize="23dp"/>
         <Button
             android:id="@+id/lastFiveSales"
@@ -43,7 +29,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="bought cars from client"
+            android:text="rented cars from client"
             android:textSize="23dp"/>
 
         <Button
@@ -56,7 +42,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="sales for period"
+            android:text="rent date between"
             android:textSize="23dp"/>
 
         <Button
@@ -66,21 +52,6 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="cars insurated with insurance type"
-            android:textSize="23dp"/>
-
-        <Button
-            android:id="@+id/insuratedCars"
-            android:text="click"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            />
-
 
     </LinearLayout>
 

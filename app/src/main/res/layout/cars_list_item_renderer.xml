@@ -15,24 +15,17 @@
         android:layout_height="wrap_content"
         android:text="brand"
         android:textSize="23dp"/>
-
     <TextView
-        android:id="@+id/car_model"
+        android:id="@+id/car_reg_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="model"
+        android:text="reg number"
         android:textSize="23dp"/>
     <TextView
-        android:id="@+id/car_year"
+        android:id="@+id/car_number_sits"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="year"
-        android:textSize="23dp"/>
-    <TextView
-        android:id="@+id/car_color"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="color"
+        android:text="number of sits"
         android:textSize="23dp"/>
     <TextView
         android:id="@+id/car_kilometers"
@@ -41,10 +34,16 @@
         android:text="kilometers"
         android:textSize="23dp"/>
     <TextView
-        android:id="@+id/car_price"
+        android:id="@+id/car_space_luggage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="price"
+        android:text="space for luggage"
+        android:textSize="23dp"/>
+    <TextView
+        android:id="@+id/car_tech_insp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="year technical inspection"
         android:textSize="23dp"/>
     <View
         android:layout_width="fill_parent"

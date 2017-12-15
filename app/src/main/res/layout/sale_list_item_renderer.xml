@@ -7,13 +7,38 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sale Date:"
+        android:text="Rent Date:"
         android:textSize="23dp"/>
     <TextView
-        android:id="@+id/sale_date"
+        android:id="@+id/rent_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="date"
+        android:textSize="23dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Return Date:"
+        android:textSize="23dp"/>
+    <TextView
+        android:id="@+id/return_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="date"
+        android:textSize="23dp"/>
+
+    <TextView
+        android:id="@+id/period"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="period"
+        android:textSize="23dp"/>
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="price"
         android:textSize="23dp"/>
 
     <View
@@ -40,41 +65,25 @@
         android:text="@string/address"
         android:textSize="23dp"/>
     <TextView
-        android:id="@+id/client_phone"
+        android:id="@+id/client_egn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/phone"
+        android:text="egn"
+        android:textSize="23dp"/>
+    <TextView
+        android:id="@+id/client_dln"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="driving license number"
+        android:textSize="23dp"/>
+    <TextView
+        android:id="@+id/client_dlexp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="driving license exp date"
         android:textSize="23dp"/>
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#c0c0c0"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Customer:"
-        android:textSize="23dp"/>
-    <TextView
-        android:id="@+id/customer_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/name"
-        android:textSize="23dp"/>
-
-    <TextView
-        android:id="@+id/customer_position"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="position"
-        android:textSize="23dp"/>
-    <TextView
-        android:id="@+id/customer_phone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/phone"
-        android:textSize="23dp"/>
-    <View
-        android:layout_width="fill_parent"
         android:layout_height="1dp"
         android:background="#c0c0c0"/>
 
@@ -89,24 +98,17 @@
         android:layout_height="wrap_content"
         android:text="brand"
         android:textSize="23dp"/>
-
     <TextView
-        android:id="@+id/car_model"
+        android:id="@+id/car_reg_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="model"
+        android:text="reg number"
         android:textSize="23dp"/>
     <TextView
-        android:id="@+id/car_year"
+        android:id="@+id/car_number_sits"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="year"
-        android:textSize="23dp"/>
-    <TextView
-        android:id="@+id/car_color"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="color"
+        android:text="number of sits"
         android:textSize="23dp"/>
     <TextView
         android:id="@+id/car_kilometers"
@@ -115,63 +117,16 @@
         android:text="kilometers"
         android:textSize="23dp"/>
     <TextView
-        android:id="@+id/car_price"
+        android:id="@+id/car_space_luggage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="price"
-        android:textSize="23dp"/>
-
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:background="#c0c0c0"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Credit Card:"
-        android:textSize="23dp"/>
-
-    <TextView
-        android:id="@+id/creditCard_company"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="service company"
+        android:text="space for luggage"
         android:textSize="23dp"/>
     <TextView
-        android:id="@+id/creditCard_number"
+        android:id="@+id/car_tech_insp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="number"
-        android:textSize="23dp"/>
-    <TextView
-        android:id="@+id/creditCard_expiration"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="expiration"
-        android:textSize="23dp"/>
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:background="#c0c0c0"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Insurance type:"
-        android:textSize="23dp"/>
-
-    <TextView
-        android:id="@+id/insurance_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="insurarer"
-        android:textSize="23dp"/>
-    <TextView
-        android:id="@+id/insurance_value"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="value"
+        android:text="year technical inspection"
         android:textSize="23dp"/>
 
     <View

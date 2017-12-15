@@ -23,7 +23,7 @@ public class LastFiveActivity extends AppCompatActivity {
 
         salesList = (ListView) findViewById( R.id.salesList );
 
-        salesData = DataController.getInstance().lastFiveSalesOrderedByPrice();
+        salesData = DataController.getInstance().lastFiveRentsOrderedByPrice();
 
         contactListAdapter = new SaleListAdapter( this, R.layout.sale_list_item_renderer, salesData );
         salesList.setAdapter( contactListAdapter );

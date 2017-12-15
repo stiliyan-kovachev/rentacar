@@ -36,30 +36,27 @@ public class CarsListAdapter extends ArrayAdapter<CarVO> {
 
         CarVO p = getItem(position);
         if (p != null) {
-            TextView carBrand = (TextView) v.findViewById(R.id.car_brand);
-            TextView carModel = (TextView) v.findViewById(R.id.car_model);
-            TextView carYear = (TextView) v.findViewById(R.id.car_year);
-            TextView carColor = (TextView) v.findViewById(R.id.car_color);
-            TextView carKilometers = (TextView) v.findViewById(R.id.car_kilometers);
-            TextView carPrice = (TextView) v.findViewById(R.id.car_price);
+            TextView carBrand = ( TextView ) v.findViewById(R.id.car_brand);
+            TextView carRegNumber = ( TextView ) v.findViewById(R.id.car_reg_number);
+            TextView carNumberSits = ( TextView ) v.findViewById(R.id.car_number_sits);
+            TextView carSpaceLuggage = ( TextView ) v.findViewById(R.id.car_space_luggage);
+            TextView carTechInsp = ( TextView ) v.findViewById(R.id.car_tech_insp);
+
 
             if (carBrand != null) {
-                carBrand.setText(p.brand);
+                carBrand.setText( p.brand );
             }
-            if (carModel != null) {
-                carModel.setText(p.model);
+            if (carRegNumber != null) {
+                carRegNumber.setText( p.registrationNumber );
             }
-            if (carYear != null) {
-                carYear.setText(String.valueOf(p.year));
+            if (carNumberSits != null) {
+                carNumberSits.setText( String.valueOf(p.numberOfSits) + " sits" );
             }
-            if (carColor != null) {
-                carColor.setText(p.color);
+            if (carTechInsp != null) {
+                carTechInsp.setText( p.hasTechnicalInspection == 1 ? "has tech inspection" : "hasn't tech inspection" );
             }
-            if (carKilometers != null) {
-                carKilometers.setText(String.valueOf(p.kilometers));
-            }
-            if (carPrice != null) {
-                carPrice.setText(String.valueOf(p.price));
+            if (carSpaceLuggage != null) {
+                carSpaceLuggage.setText( p.spaceForLuggage == 1 ? "has space for luggage" : "hasn't space for luggage" );
             }
 
         }

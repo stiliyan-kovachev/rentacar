@@ -35,80 +35,64 @@ public class SaleListAdapter extends ArrayAdapter<RentVO> {
 
         RentVO p = getItem( position );
         if ( p != null ) {
+            TextView rentDate = ( TextView ) v.findViewById(R.id.rent_date);
+            TextView returnDate = ( TextView ) v.findViewById(R.id.return_date);
+            TextView period = ( TextView ) v.findViewById(R.id.period);
+            TextView price = ( TextView ) v.findViewById(R.id.price);
             TextView clientName = ( TextView ) v.findViewById(R.id.client_name);
-            TextView saleDate = ( TextView ) v.findViewById(R.id.sale_date);
-            TextView clientPhone = ( TextView ) v.findViewById(R.id.client_phone);
+            TextView clientEGN = ( TextView ) v.findViewById(R.id.client_egn);
+            TextView clientDLN = ( TextView ) v.findViewById(R.id.client_dln);
+            TextView clientDLExp = ( TextView ) v.findViewById(R.id.client_dlexp);
             TextView clienAddress = ( TextView ) v.findViewById(R.id.client_address);
-            TextView customerName = ( TextView ) v.findViewById(R.id.customer_name);
-            TextView customerPhone = ( TextView ) v.findViewById(R.id.customer_phone);
-            TextView customerPosition = ( TextView ) v.findViewById(R.id.customer_position);
             TextView carBrand = ( TextView ) v.findViewById(R.id.car_brand);
-            TextView carModel = ( TextView ) v.findViewById(R.id.car_model);
-            TextView carYear = ( TextView ) v.findViewById(R.id.car_year);
-            TextView carColor = ( TextView ) v.findViewById(R.id.car_color);
-            TextView carKilometers = ( TextView ) v.findViewById(R.id.car_kilometers);
-            TextView carPrice = ( TextView ) v.findViewById(R.id.car_price);
-            TextView creditcardCompany = ( TextView ) v.findViewById(R.id.creditCard_company);
-            TextView creditcardNumber = ( TextView ) v.findViewById(R.id.creditCard_number);
-            TextView creditcardExpiration = ( TextView ) v.findViewById(R.id.creditCard_expiration);
-            TextView insuranceName = ( TextView ) v.findViewById(R.id.insurance_name);
-            TextView insuranceValue = ( TextView ) v.findViewById(R.id.insurance_value);
+            TextView carRegNumber = ( TextView ) v.findViewById(R.id.car_reg_number);
+            TextView carNumberSits = ( TextView ) v.findViewById(R.id.car_number_sits);
+            TextView carSpaceLuggage = ( TextView ) v.findViewById(R.id.car_space_luggage);
+            TextView carTechInsp = ( TextView ) v.findViewById(R.id.car_tech_insp);
 
-            if (saleDate != null) {
-                saleDate.setText( p.saledate.toString() );
+            if (rentDate != null) {
+                rentDate.setText( p.rentDate.toString() );
+            }
+            if (returnDate != null) {
+                returnDate.setText( p.returnDate.toString() );
+            }
+            if (period != null) {
+                period.setText( p.period + "days");
+            }
+
+            if (price != null) {
+                price.setText("$" + p.price);
             }
             if (clientName != null) {
                 clientName.setText( p.client.name );
             }
-            if (clientPhone != null) {
-                clientPhone.setText( p.client.phone );
+            if (clientEGN != null) {
+                clientEGN.setText( String.valueOf(p.client.egn) );
             }
             if (clienAddress != null) {
                 clienAddress.setText( p.client.address );
             }
-            if (customerName != null) {
-                customerName.setText( p.customer.name );
+            if (clientDLN != null) {
+                clientDLN.setText( String.valueOf(p.client.driving_license_number) );
             }
-            if (customerPhone != null) {
-                customerPhone.setText( p.customer.phone );
-            }
-            if (customerPosition != null) {
-                customerPosition.setText( p.customer.position );
+            if (clientDLExp != null) {
+                clientDLExp.setText( p.client.driving_license_exp.toString());
             }
             if (carBrand != null) {
                 carBrand.setText( p.car.brand );
             }
-            if (carModel != null) {
-                carModel.setText( p.car.model );
+            if (carRegNumber != null) {
+                carRegNumber.setText( p.car.registrationNumber );
             }
-            if (carYear != null) {
-                carYear.setText( String.valueOf(p.car.year) );
+            if (carNumberSits != null) {
+                carNumberSits.setText( String.valueOf(p.car.numberOfSits) + " sits" );
             }
-            if (carColor != null) {
-                carColor.setText( p.car.color );
+            if (carTechInsp != null) {
+                carTechInsp.setText( p.car.hasTechnicalInspection == 1 ? "has tech inspection" : "hasn't tech inspection" );
             }
-            if (carKilometers != null) {
-                carKilometers.setText( String.valueOf(p.car.kilometers) );
+            if (carSpaceLuggage != null) {
+                carSpaceLuggage.setText( p.car.spaceForLuggage == 1 ? "has space for luggage" : "hasn't space for luggage" );
             }
-            if (carPrice != null) {
-                carPrice.setText( String.valueOf(p.car.price) );
-            }
-            if (creditcardCompany != null) {
-                creditcardCompany.setText( p.creditCard.serviceCompany );
-            }
-            if (creditcardNumber != null) {
-                creditcardNumber.setText( String.valueOf( p.creditCard.number ) );
-            }
-            if (creditcardExpiration != null) {
-                creditcardExpiration.setText( p.creditCard.expirationDate.toString() );
-            }
-            if (insuranceName != null) {
-                insuranceName.setText( p.insuranceType.insurer );
-            }
-            if (insuranceValue != null) {
-                insuranceValue.setText( String.valueOf( p.insuranceType.value ) );
-            }
-
         }
 
         return v;

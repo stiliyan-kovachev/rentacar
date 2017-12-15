@@ -9,47 +9,49 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
 import rentacar.stiliyan.com.rentacar.adapter.CarsListAdapter;
 import rentacar.stiliyan.com.rentacar.data.CarVO;
+import rentacar.stiliyan.com.rentacar.data.ClientVO;
 import rentacar.stiliyan.com.rentacar.data.DataController;
 
-public class CarsInsuratedActivity extends AppCompatActivity {
+public class RentedCarsByClientActivity extends AppCompatActivity {
 
     private Button confirmBtn;
-    private Spinner insurances;
+    private Spinner clients;
     private ListView carsList;
 
     private CarsListAdapter contactListAdapter;
 
-    private List<InsuranceVO> insuranceList;
+    private List<ClientVO> clientList;
     private List<CarVO> cars = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cars_insurated);
+        setContentView(R.layout.activity_boght_cars_by_client);
 
-        insurances = ( Spinner ) findViewById( R.id.insurances );
+        clients = ( Spinner ) findViewById( R.id.customers );
         carsList = (ListView ) findViewById( R.id.carsList );
         confirmBtn = ( Button ) findViewById( R.id.confirm );
 
         contactListAdapter = new CarsListAdapter( this, R.layout.sale_list_item_renderer, cars );
         carsList.setAdapter( contactListAdapter );
 
-        insuranceList = DataController.getInstance().getInsurances();
-        List<String> customerNames = new ArrayList<>();
+        clientList = DataController.getInstance().getClients();
+        List<String> clientNames = new ArrayList<>();
 
-        for (int i = 0; i< insuranceList.size(); i++)
+        for ( int i = 0; i<clientList.size();i++)
         {
-            customerNames.add(insuranceList.get(i).insurer);
+            clientNames.add(clientList.get(i).name);
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>( this,android.R.layout.simple_spinner_item, customerNames );
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>( this,android.R.layout.simple_spinner_item, clientNames );
         adapter.setDropDownViewResource( android.R.layout.simple_spinner_dropdown_item );
-        insurances.setAdapter( adapter );
+        clients.setAdapter( adapter );
 
         confirmBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,16 +62,16 @@ public class CarsInsuratedActivity extends AppCompatActivity {
     }
 
     private void confirmTriggered(){
-        if ( insurances.getSelectedItemPosition() < 0 )
+        if ( clients.getSelectedItemPosition() < 0 )
         {
-            Toast.makeText(this,"invalid insurance", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"invalid client", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        int id = insuranceList.get( insurances.getSelectedItemPosition() ).id;
+        int customerId = clientList.get( clients.getSelectedItemPosition() ).id;
 
         cars.clear();
-        cars.addAll( DataController.getInstance().carsInsuratedWithType( id ));
+        cars.addAll( DataController.getInstance().boughtCarsByClient( customerId ));
         contactListAdapter.notifyDataSetChanged();
     }
 

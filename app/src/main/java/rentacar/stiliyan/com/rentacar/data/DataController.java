@@ -106,7 +106,6 @@ public class DataController {
                 model.car.spaceForLuggage = ( c.getInt(c.getColumnIndex( DataBase.key_car_space_for_luggage ) ) );
                 model.car.hasTechnicalInspection = ( c.getInt(c.getColumnIndex( DataBase.key_car_tech_inspection ) ) );
 
-
                 allContacts.add( model);
             }
             while ( c.moveToNext() );
@@ -227,29 +226,6 @@ public class DataController {
 
         return models;
     }
-/*
-    public List<CarVO> saledCarsFromCustomerOrdered( int customerId ){
-        List<CarVO> models = new ArrayList<>();
-
-        Cursor c = db.saledCarsFromCustomerOrdered(customerId );
-        if ( c.moveToFirst() )
-            do {
-                CarVO model = new CarVO();
-                model.id = c.getInt(c.getColumnIndex(DataBase.car_id));
-                model.brand = c.getString(c.getColumnIndex(DataBase.key_brand));
-                model.model = c.getString(c.getColumnIndex(DataBase.key_model));
-                model.year = c.getInt(c.getColumnIndex(DataBase.key_year));
-                model.color = c.getString(c.getColumnIndex(DataBase.key_color));
-                model.kilometers = c.getInt(c.getColumnIndex(DataBase.key_kilometers));
-                model.price = c.getInt(c.getColumnIndex(DataBase.key_price));
-
-                models.add(model);
-            }
-            while (c.moveToNext() );
-        db.close();
-
-        return models;
-    }
 
     public List<CarVO> boughtCarsByClient( int clientId ){
         List<CarVO> models = new ArrayList<>();
@@ -258,13 +234,12 @@ public class DataController {
         if ( c.moveToFirst() )
             do {
                 CarVO model = new CarVO();
-                model.id = c.getInt(c.getColumnIndex(DataBase.car_id));
-                model.brand = c.getString(c.getColumnIndex(DataBase.key_brand));
-                model.model = c.getString(c.getColumnIndex(DataBase.key_model));
-                model.year = c.getInt(c.getColumnIndex(DataBase.key_year));
-                model.color = c.getString(c.getColumnIndex(DataBase.key_color));
-                model.kilometers = c.getInt(c.getColumnIndex(DataBase.key_kilometers));
-                model.price = c.getInt(c.getColumnIndex(DataBase.key_price));
+                model.id = ( c.getInt(c.getColumnIndex( DataBase.car_id ) ) );
+                model.brand = ( c.getString(c.getColumnIndex( DataBase.key_car_brand ) ) );
+                model.registrationNumber = ( c.getString(c.getColumnIndex( DataBase.key_car_registion_number ) ) );
+                model.numberOfSits = ( c.getInt(c.getColumnIndex( DataBase.key_car_number_sits ) ) );
+                model.spaceForLuggage = ( c.getInt(c.getColumnIndex( DataBase.key_car_space_for_luggage ) ) );
+                model.hasTechnicalInspection = ( c.getInt(c.getColumnIndex( DataBase.key_car_tech_inspection ) ) );
 
                 models.add(model);
             }
@@ -274,73 +249,36 @@ public class DataController {
         return models;
     }
 
-    public List<CarVO> carsInsuratedWithType( int insuranceId ){
-        List<CarVO> models = new ArrayList<>();
-
-        Cursor c = db.carsInsuratedWithType( insuranceId );
-        if ( c.moveToFirst() )
-            do {
-                CarVO model = new CarVO();
-                model.id = c.getInt(c.getColumnIndex(DataBase.car_id));
-                model.brand = c.getString(c.getColumnIndex(DataBase.key_brand));
-                model.model = c.getString(c.getColumnIndex(DataBase.key_model));
-                model.year = c.getInt(c.getColumnIndex(DataBase.key_year));
-                model.color = c.getString(c.getColumnIndex(DataBase.key_color));
-                model.kilometers = c.getInt(c.getColumnIndex(DataBase.key_kilometers));
-                model.price = c.getInt(c.getColumnIndex(DataBase.key_price));
-
-                models.add(model);
-            }
-            while (c.moveToNext() );
-        db.close();
-
-        return models;
-    }
-
-    public List<RentVO> lastFiveSalesOrderedByPrice(){
+    public List<RentVO> lastFiveRentsOrderedByPrice(){
         List<RentVO> models = new ArrayList<>();
-        Cursor c = db.lastFiveSalesOrderedByPrice();
+        Cursor c = db.lastFiveRentsOrderedByPrice();
 
         if ( c.moveToFirst() )
             do {
 
-                RentVO model = new RentVO();
-                model.id =  ( c.getInt(c.getColumnIndex( DataBase.sale_id) ) );
-                model.saledate = new Date( ( c.getLong(c.getColumnIndex( DataBase.key_saledate) ) ) );
+                RentVO rent = new RentVO();
+                rent.id = ( c.getInt(c.getColumnIndex( DataBase.rent_id) ) );
+                rent.rentDate = new Date( c.getLong(c.getColumnIndex( DataBase.key_rented_date) ) );
+                rent.returnDate = new Date( c.getLong(c.getColumnIndex( DataBase.key_return_date) ) );
+                rent.period = c.getInt(c.getColumnIndex( DataBase.key_rent_period) );
+                rent.price = c.getInt(c.getColumnIndex( DataBase.key_rent_price) );
 
-                model.client = new ClientVO();
-                model.client.id = ( c.getInt(c.getColumnIndex( DataBase.client_id ) ) );
-                model.client.name = ( c.getString(c.getColumnIndex( DataBase.key_client_name ) ) );
-                model.client.address = ( c.getString(c.getColumnIndex( DataBase.key_address ) ) );
-                model.client.phone = ( c.getString(c.getColumnIndex( DataBase.key_client_phone ) ) );
+                rent.client = new ClientVO();
+                rent.client.id = ( c.getInt(c.getColumnIndex( DataBase.client_id ) ) );
+                rent.client.name = ( c.getString(c.getColumnIndex( DataBase.key_client_name ) ) );
+                rent.client.address = ( c.getString(c.getColumnIndex( DataBase.key_client_address ) ) );
+                rent.client.egn = ( c.getLong(c.getColumnIndex( DataBase.key_client_egn ) ) );
+                rent.client.driving_license_number = ( c.getLong(c.getColumnIndex( DataBase.key_client_driving_license_N ) ) );
+                rent.client.driving_license_exp = new Date( c.getLong(c.getColumnIndex( DataBase.key_client_driving_license_exp ) ) );
 
-                model.customer = new CustomerVO();
-                model.customer.id = ( c.getInt(c.getColumnIndex( DataBase.customer_id ) ) );
-                model.customer.name = ( c.getString(c.getColumnIndex( DataBase.key_customer_name ) ) );
-                model.customer.phone = ( c.getString(c.getColumnIndex( DataBase.key_customer_phone ) ) );
-                model.customer.position = ( c.getString(c.getColumnIndex( DataBase.key_position ) ) );
-
-                model.car = new CarVO();
-                model.car.id = ( c.getInt(c.getColumnIndex( DataBase.car_id ) ) );
-                model.car.brand = ( c.getString(c.getColumnIndex( DataBase.key_brand ) ) );
-                model.car.model = ( c.getString(c.getColumnIndex( DataBase.key_model ) ) );
-                model.car.year = ( c.getInt(c.getColumnIndex( DataBase.key_year ) ) );
-                model.car.color = ( c.getString(c.getColumnIndex( DataBase.key_color ) ) );
-                model.car.kilometers = ( c.getInt(c.getColumnIndex( DataBase.key_kilometers ) ) );
-                model.car.price = ( c.getInt(c.getColumnIndex( DataBase.key_price ) ) );
-
-                model.creditCard = new CreditCardVO();
-                model.creditCard.id = ( c.getInt(c.getColumnIndex( DataBase.credit_card_id ) ) );
-                model.creditCard.number = ( c.getInt(c.getColumnIndex( DataBase.key_number ) ) );
-                model.creditCard.serviceCompany = ( c.getString(c.getColumnIndex( DataBase.key_services_company ) ) );
-                model.creditCard.expirationDate = new Date ( c.getLong(c.getColumnIndex( DataBase.key_expiration ) ) );
-
-                model.insuranceType = new InsuranceVO();
-                model.insuranceType.id = ( c.getInt(c.getColumnIndex( DataBase.insurance_id ) ) );
-                model.insuranceType.insurer = ( c.getString(c.getColumnIndex( DataBase.key_insurer_name ) ) );
-                model.insuranceType.value = ( c.getInt(c.getColumnIndex( DataBase.key_insurance_value ) ) );
-
-                models.add( model);
+                rent.car = new CarVO();
+                rent.car.id = ( c.getInt(c.getColumnIndex( DataBase.car_id ) ) );
+                rent.car.brand = ( c.getString(c.getColumnIndex( DataBase.key_car_brand ) ) );
+                rent.car.registrationNumber = ( c.getString(c.getColumnIndex( DataBase.key_car_registion_number ) ) );
+                rent.car.numberOfSits = ( c.getInt(c.getColumnIndex( DataBase.key_car_number_sits ) ) );
+                rent.car.hasTechnicalInspection = ( c.getInt(c.getColumnIndex( DataBase.key_car_tech_inspection ) ) );
+                rent.car.spaceForLuggage = ( c.getInt(c.getColumnIndex( DataBase.key_car_space_for_luggage ) ) );
+                models.add( rent );
             }
             while ( c.moveToNext() );
 
@@ -357,40 +295,27 @@ public class DataController {
             do {
 
                 RentVO model = new RentVO();
-                model.id =  ( c.getInt(c.getColumnIndex( DataBase.sale_id) ) );
-                model.saledate = new Date( ( c.getLong(c.getColumnIndex( DataBase.key_saledate) ) ) );
+                model.id = ( c.getInt(c.getColumnIndex( DataBase.rent_id) ) );
+                model.rentDate = new Date( c.getLong(c.getColumnIndex( DataBase.key_rented_date) ) );
+                model.returnDate = new Date( c.getLong(c.getColumnIndex( DataBase.key_return_date) ) );
+                model.period = c.getInt(c.getColumnIndex( DataBase.key_rent_period) );
+                model.price = c.getInt(c.getColumnIndex( DataBase.key_rent_price) );
 
                 model.client = new ClientVO();
                 model.client.id = ( c.getInt(c.getColumnIndex( DataBase.client_id ) ) );
                 model.client.name = ( c.getString(c.getColumnIndex( DataBase.key_client_name ) ) );
-                model.client.address = ( c.getString(c.getColumnIndex( DataBase.key_address ) ) );
-                model.client.phone = ( c.getString(c.getColumnIndex( DataBase.key_client_phone ) ) );
-
-                model.customer = new CustomerVO();
-                model.customer.id = ( c.getInt(c.getColumnIndex( DataBase.customer_id ) ) );
-                model.customer.name = ( c.getString(c.getColumnIndex( DataBase.key_customer_name ) ) );
-                model.customer.phone = ( c.getString(c.getColumnIndex( DataBase.key_customer_phone ) ) );
-                model.customer.position = ( c.getString(c.getColumnIndex( DataBase.key_position ) ) );
+                model.client.address = ( c.getString(c.getColumnIndex( DataBase.key_client_address ) ) );
+                model.client.egn = ( c.getLong(c.getColumnIndex( DataBase.key_client_egn ) ) );
+                model.client.driving_license_number = ( c.getLong(c.getColumnIndex( DataBase.key_client_driving_license_N ) ) );
+                model.client.driving_license_exp = new Date( c.getLong(c.getColumnIndex( DataBase.key_client_driving_license_exp ) ) );
 
                 model.car = new CarVO();
                 model.car.id = ( c.getInt(c.getColumnIndex( DataBase.car_id ) ) );
-                model.car.brand = ( c.getString(c.getColumnIndex( DataBase.key_brand ) ) );
-                model.car.model = ( c.getString(c.getColumnIndex( DataBase.key_model ) ) );
-                model.car.year = ( c.getInt(c.getColumnIndex( DataBase.key_year ) ) );
-                model.car.color = ( c.getString(c.getColumnIndex( DataBase.key_color ) ) );
-                model.car.kilometers = ( c.getInt(c.getColumnIndex( DataBase.key_kilometers ) ) );
-                model.car.price = ( c.getInt(c.getColumnIndex( DataBase.key_price ) ) );
-
-                model.creditCard = new CreditCardVO();
-                model.creditCard.id = ( c.getInt(c.getColumnIndex( DataBase.credit_card_id ) ) );
-                model.creditCard.number = ( c.getLong(c.getColumnIndex( DataBase.key_number ) ) );
-                model.creditCard.serviceCompany = ( c.getString(c.getColumnIndex( DataBase.key_services_company ) ) );
-                model.creditCard.expirationDate = new Date ( c.getLong(c.getColumnIndex( DataBase.key_expiration ) ) );
-
-                model.insuranceType = new InsuranceVO();
-                model.insuranceType.id = ( c.getInt(c.getColumnIndex( DataBase.insurance_id ) ) );
-                model.insuranceType.insurer = ( c.getString(c.getColumnIndex( DataBase.key_insurer_name ) ) );
-                model.insuranceType.value = ( c.getInt(c.getColumnIndex( DataBase.key_insurance_value ) ) );
+                model.car.brand = ( c.getString(c.getColumnIndex( DataBase.key_car_brand ) ) );
+                model.car.registrationNumber = ( c.getString(c.getColumnIndex( DataBase.key_car_registion_number ) ) );
+                model.car.numberOfSits = ( c.getInt(c.getColumnIndex( DataBase.key_car_number_sits ) ) );
+                model.car.hasTechnicalInspection = ( c.getInt(c.getColumnIndex( DataBase.key_car_tech_inspection ) ) );
+                model.car.spaceForLuggage = ( c.getInt(c.getColumnIndex( DataBase.key_car_space_for_luggage ) ) );
 
                 models.add( model);
             }
@@ -399,5 +324,5 @@ public class DataController {
         db.close();
 
         return models;
-    }*/
+    }
 }

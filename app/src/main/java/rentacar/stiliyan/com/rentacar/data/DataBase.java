@@ -133,64 +133,36 @@ public class DataBase extends SQLiteOpenHelper {
         return  cursor;
     }
 
-    /*public  Cursor saledCarsFromCustomerOrdered( int customerId ){
-        open();
-        Cursor cursor = db.rawQuery( "select " + car_id +"," + key_brand +"," + key_model + "," + key_year + "," + key_color + "," + key_kilometers + "," +key_price +
-                " from (select * from " +sale_table_name +
-                " inner join " +customer_table_name +" on " + sale_table_name +"."  + customer_id + " = "+customer_table_name +"." + customer_id +
-                " inner join " +car_table_name +" on " + sale_table_name +"."  + car_id + " = "+car_table_name +"." + car_id +
-                ")" + " where " + customer_id + " = " + customerId + ";" + " order by " + key_saledate + " asc;", null );
-
-        return  cursor;
-    }
-
-    public  Cursor lastFiveSalesOrderedByPrice(){
-        open();
-        Cursor cursor = db.rawQuery( "select * from (select " + "*" + " from " +sale_table_name +
-                " inner join " +client_table_name +" on " + sale_table_name +"."  + client_id + " = "+client_table_name +"." + client_id +
-                " inner join " +customer_table_name +" on " + sale_table_name +"."  + customer_id + " = "+customer_table_name +"." + customer_id +
-                " inner join " +car_table_name +" on " + sale_table_name +"."  + car_id + " = "+car_table_name +"." + car_id +
-                " inner join " +credit_card_name +" on " + sale_table_name +"."  + credit_card_id + " = "+credit_card_name +"." + credit_card_id +
-                " inner join " +insurance_name +" on " + sale_table_name +"."  + insurance_id + " = "+insurance_name +"." + insurance_id +
-               " order by " + key_price + " asc)" + " limit 5;", null );
-
-        return  cursor;
-    }
-
     public  Cursor boughtCarsByClient( int clientId ){
         open();
-        Cursor cursor = db.rawQuery( "select " + car_id +"," + key_brand +"," + key_model + "," + key_year + "," + key_color + "," + key_kilometers + "," +key_price +
-                " from (select * from " + sale_table_name +
-                " inner join " +client_table_name +" on " + sale_table_name +"."  + client_id + " = "+client_table_name +"." + client_id +
-                " inner join " +car_table_name +" on " + sale_table_name +"."  + car_id + " = "+car_table_name +"." + car_id +
+        Cursor cursor = db.rawQuery( "select " + car_id +"," + key_car_brand +"," + key_car_registion_number + "," + key_car_number_sits + "," + key_car_space_for_luggage + ","  + key_car_tech_inspection +
+                " from (select * from " + rent_table_name +
+                " inner join " +client_table_name +" on " + rent_table_name +"."  + client_id + " = "+client_table_name +"." + client_id +
+                " inner join " +car_table_name +" on " + rent_table_name +"."  + car_id + " = "+car_table_name +"." + car_id +
                 ")" + " where " + client_id + " = " + clientId + ";" , null );
+
+        return  cursor;
+    }
+
+    public  Cursor lastFiveRentsOrderedByPrice(){
+        open();
+        Cursor cursor = db.rawQuery( "select * from (select " + "*" + " from " +rent_table_name +
+                " inner join " +client_table_name +" on " + rent_table_name +"."  + client_id + " = "+client_table_name +"." + client_id +
+                " inner join " +car_table_name +" on " + rent_table_name +"."  + car_id + " = "+car_table_name +"." + car_id +
+                " order by " + key_rent_price + " asc)" + " limit 5;", null );
 
         return  cursor;
     }
 
     public  Cursor salesForPeriod( long from, long to ){
         open();
-        Cursor cursor = db.rawQuery( "select * from (select " + "*" + " from " +sale_table_name +
-                " inner join " +client_table_name +" on " + sale_table_name +"."  + client_id + " = "+client_table_name +"." + client_id +
-                " inner join " +customer_table_name +" on " + sale_table_name +"."  + customer_id + " = "+customer_table_name +"." + customer_id +
-                " inner join " +car_table_name +" on " + sale_table_name +"."  + car_id + " = "+car_table_name +"." + car_id +
-                " inner join " +credit_card_name +" on " + sale_table_name +"."  + credit_card_id + " = "+credit_card_name +"." + credit_card_id +
-                " inner join " +insurance_name +" on " + sale_table_name +"."  + insurance_id + " = "+insurance_name +"." + insurance_id +
-                ") where " + key_saledate +" between " + from + " and " + to + ";", null );
+        Cursor cursor = db.rawQuery( "select * from (select " + "*" + " from " +rent_table_name +
+                " inner join " +client_table_name +" on " + rent_table_name +"."  + client_id + " = "+client_table_name +"." + client_id +
+                " inner join " +car_table_name +" on " + rent_table_name +"."  + car_id + " = "+car_table_name +"." + car_id +
+                ") where " + key_rented_date +" between " + from + " and " + to + ";", null );
 
         return  cursor;
     }
-
-    public  Cursor carsInsuratedWithType( int insuranceId ){
-        open();
-        Cursor cursor = db.rawQuery( "select " + car_id +"," + key_brand +"," + key_model + "," + key_year + "," + key_color + "," + key_kilometers + "," +key_price +
-                " from (select * from " + sale_table_name +
-                " inner join " +client_table_name +" on " + sale_table_name +"."  + client_id + " = "+client_table_name +"." + client_id +
-                " inner join " +car_table_name +" on " + sale_table_name +"."  + car_id + " = "+car_table_name +"." + car_id +
-                ")" + " where " + insurance_id + " = " + insuranceId + ";" , null );
-
-        return  cursor;
-    }*/
 
     public void deleteSale( int id )
     {
