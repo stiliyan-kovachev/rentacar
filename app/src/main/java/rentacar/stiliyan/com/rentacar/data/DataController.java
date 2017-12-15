@@ -223,6 +223,51 @@ public class DataController {
         return sale;
     }
 
+    public CarVO getCarById(int id) {
+        CarVO car = new CarVO();
+
+        Cursor c = db.getCarById( id );
+        if ( c.moveToFirst() )
+            do {
+                car = new CarVO();
+                car.id = ( c.getInt(c.getColumnIndex( DataBase.car_id ) ) );
+                car.brand = ( c.getString(c.getColumnIndex( DataBase.key_car_brand ) ) );
+                car.registrationNumber = ( c.getString(c.getColumnIndex( DataBase.key_car_registion_number ) ) );
+                car.numberOfSits = ( c.getInt(c.getColumnIndex( DataBase.key_car_number_sits ) ) );
+                car.hasTechnicalInspection = ( c.getInt(c.getColumnIndex( DataBase.key_car_tech_inspection ) ) );
+                car.spaceForLuggage = ( c.getInt(c.getColumnIndex( DataBase.key_car_space_for_luggage ) ) );
+            }
+            while ( c.moveToNext() );
+
+        db.close();
+
+        return car;
+    }
+
+    public ClientVO getClientById(int id) {
+        ClientVO client = new ClientVO();
+
+        Cursor c = db.getClientById( id );
+        if ( c.moveToFirst() )
+            do {
+
+                client = new ClientVO();
+                client.id = ( c.getInt(c.getColumnIndex( DataBase.client_id ) ) );
+                client.name = ( c.getString(c.getColumnIndex( DataBase.key_client_name ) ) );
+                client.address = ( c.getString(c.getColumnIndex( DataBase.key_client_address ) ) );
+                client.egn = ( c.getLong(c.getColumnIndex( DataBase.key_client_egn ) ) );
+                client.driving_license_number = ( c.getLong(c.getColumnIndex( DataBase.key_client_driving_license_N ) ) );
+                client.driving_license_exp = new Date( c.getLong(c.getColumnIndex( DataBase.key_client_driving_license_exp ) ) );
+            }
+            while ( c.moveToNext() );
+
+        db.close();
+
+        return client;
+    }
+
+
+
     public List<RentVO> rentsAfterDate(long date){
         RentVO rent;
         List<RentVO> models = new ArrayList<>();

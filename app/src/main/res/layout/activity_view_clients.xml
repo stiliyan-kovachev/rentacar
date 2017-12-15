@@ -6,4 +6,6 @@
     android:layout_height="match_parent"
     tools:context="rentacar.stiliyan.com.rentacar.ViewClientsActivity">
 
+
+
 </android.support.constraint.ConstraintLayout>

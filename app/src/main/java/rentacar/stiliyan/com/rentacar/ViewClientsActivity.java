@@ -50,7 +50,7 @@ public class ViewClientsActivity extends AppCompatActivity {
                 builder.setItems(items, new DialogInterface.OnClickListener() {
 
                     public void onClick(DialogInterface dialog, int item) {
-                        CarVO model = (CarVO) clientsList.getItemAtPosition( i );
+                        ClientVO model = (ClientVO) clientsList.getItemAtPosition( i );
                         if( item == 0 )
                         {
                             Intent intent = new Intent( ViewClientsActivity.this, EditClientActivity.class );

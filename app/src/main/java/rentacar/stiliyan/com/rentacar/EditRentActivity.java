@@ -24,7 +24,7 @@ import rentacar.stiliyan.com.rentacar.data.RentVO;
 import rentacar.stiliyan.com.rentacar.utils.Consts;
 import rentacar.stiliyan.com.rentacar.utils.DatePickerFragment;
 
-public class EditSaleActivity extends AppCompatActivity {
+public class EditRentActivity extends AppCompatActivity {
 
     private Spinner clients;
     private Spinner cars;
@@ -197,7 +197,7 @@ public class EditSaleActivity extends AppCompatActivity {
 
         if ( cars.getSelectedItemPosition() < 0 )
         {
-            Toast.makeText(this,"invalid car", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"invalid crrCar", Toast.LENGTH_SHORT).show();
             return;
         }
 

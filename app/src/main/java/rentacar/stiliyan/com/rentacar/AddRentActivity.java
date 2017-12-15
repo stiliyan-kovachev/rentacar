@@ -156,7 +156,7 @@ public class AddRentActivity extends AppCompatActivity {
 
         if ( cars.getSelectedItemPosition() < 0 )
         {
-            Toast.makeText(this,"invalid car", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"invalid crrCar", Toast.LENGTH_SHORT).show();
             return;
         }
 

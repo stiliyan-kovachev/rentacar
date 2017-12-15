@@ -50,7 +50,7 @@ public class ViewSalesActivity extends AppCompatActivity {
                         RentVO model = (RentVO) salesList.getItemAtPosition( i );
                         if( item == 0 )
                         {
-                            Intent intent = new Intent( ViewSalesActivity.this, EditSaleActivity.class );
+                            Intent intent = new Intent( ViewSalesActivity.this, EditRentActivity.class );
                             intent.putExtra( Consts.ID, model.id );
                             startActivityForResult( intent, RequestCodes.EDIT_REQUEST_CODE);
                         }

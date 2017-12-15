@@ -137,6 +137,30 @@ public class DataBase extends SQLiteOpenHelper {
 
     }
 
+    public Cursor getCarById(int id )
+    {
+        open();
+
+        Cursor cursor = db.rawQuery( "select * from " + car_table_name + " where " + car_id + " = " + id + ";", null );
+
+//        close();
+
+        return  cursor;
+
+    }
+
+    public Cursor getClientById(int id )
+    {
+        open();
+
+        Cursor cursor = db.rawQuery( "select * from " + client_table_name + " where " + client_id + " = " + id + ";", null );
+
+//        close();
+
+        return  cursor;
+
+    }
+
     public  Cursor rentsAfterDate( long date ){
         open();
         Cursor cursor = db.rawQuery( "select * from (select " + "*" + " from " +rent_table_name +

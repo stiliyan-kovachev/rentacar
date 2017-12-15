@@ -32,7 +32,7 @@ public class RentedCarsByClientActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_boght_cars_by_client);
+        setContentView(R.layout.activity_rented_cars_by_client);
 
         clients = ( Spinner ) findViewById( R.id.customers );
         carsList = (ListView ) findViewById( R.id.carsList );

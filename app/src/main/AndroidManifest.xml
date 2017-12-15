@@ -34,7 +34,7 @@
             android:label="@string/title_activity_view_sales"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".EditSaleActivity"
+            android:name=".EditRentActivity"
             android:label="@string/title_activity_edit_sale"
             android:theme="@style/AppTheme" />
         <activity
