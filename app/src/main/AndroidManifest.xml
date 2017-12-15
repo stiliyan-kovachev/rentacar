@@ -53,6 +53,11 @@
             android:name=".RentedCarsByClientActivity"
             android:label="@string/title_activity_boght_cars_by_client"
             android:theme="@style/AppTheme" />
+        <activity android:name=".ViewActivity" />
+        <activity android:name=".ViewClientsActivity" />
+        <activity android:name=".ViewCarsActivity" />
+        <activity android:name=".EditClientActivity" />
+        <activity android:name=".EditCarActivity"></activity>
     </application>
 
 </manifest>

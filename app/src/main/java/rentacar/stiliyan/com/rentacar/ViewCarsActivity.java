@@ -3,60 +3,61 @@ package rentacar.stiliyan.com.rentacar;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.List;
 
-import rentacar.stiliyan.com.rentacar.adapter.SaleListAdapter;
+import rentacar.stiliyan.com.rentacar.adapter.CarsListAdapter;
+import rentacar.stiliyan.com.rentacar.data.CarVO;
 import rentacar.stiliyan.com.rentacar.data.DataController;
-import rentacar.stiliyan.com.rentacar.data.RentVO;
 import rentacar.stiliyan.com.rentacar.utils.Consts;
 import rentacar.stiliyan.com.rentacar.utils.RequestCodes;
 
-public class ViewSalesActivity extends AppCompatActivity {
+public class ViewCarsActivity extends AppCompatActivity {
 
-    private SaleListAdapter contactListAdapter;
-    private ListView salesList;
-    private List<RentVO> salesData;
+    private ListView carsList;
+    private CarsListAdapter contactListAdapter;
+    private List<CarVO> cars;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_sales);
+        setContentView(R.layout.activity_view_cars);
 
-        salesList = (ListView) findViewById( R.id.salesList );
+        carsList = (ListView ) findViewById( R.id.carsList );
 
-        salesData = DataController.getInstance().getAllRent();
+        cars = DataController.getInstance().getCars();
 
-        contactListAdapter = new SaleListAdapter( this, R.layout.sale_list_item_renderer, salesData );
-        salesList.setAdapter( contactListAdapter );
+        contactListAdapter = new CarsListAdapter( this, R.layout.sale_list_item_renderer, cars );
+        carsList.setAdapter( contactListAdapter );
 
-        salesList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        carsList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 
             public boolean onItemLongClick( AdapterView<?> arg0, View v,
                                             final int i, long l ) {
 
                 final CharSequence[] items = { getResources().getString( R.string.edit ), getResources().getString( R.string.delete ) };
 
-                AlertDialog.Builder builder = new AlertDialog.Builder( ViewSalesActivity.this );
+                AlertDialog.Builder builder = new AlertDialog.Builder( ViewCarsActivity.this );
 
                 builder.setTitle("Action:");
                 builder.setItems(items, new DialogInterface.OnClickListener() {
 
                     public void onClick(DialogInterface dialog, int item) {
-                        RentVO model = (RentVO) salesList.getItemAtPosition( i );
+                        CarVO model = (CarVO) carsList.getItemAtPosition( i );
                         if( item == 0 )
                         {
-                            Intent intent = new Intent( ViewSalesActivity.this, EditSaleActivity.class );
+                            Intent intent = new Intent( ViewCarsActivity.this, EditCarActivity.class );
                             intent.putExtra( Consts.ID, model.id );
                             startActivityForResult( intent, RequestCodes.EDIT_REQUEST_CODE);
                         }
                         else
                         if ( item == 1 ) {
-                            DataController.getInstance().deleteRent( model.id );
+                            DataController.getInstance().deleteCar( model.id );
                             updateList();
                         }
                     }
@@ -70,24 +71,12 @@ public class ViewSalesActivity extends AppCompatActivity {
                 return true;
             }
         });
-
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
-        if (requestCode == 1) {
-            if(resultCode ==  RequestCodes.EDIT_REQUEST_CODE){
-                updateList();
-            }
-        }
     }
 
     private void updateList()
     {
-        salesData.clear();
-        salesData.addAll(  DataController.getInstance().getAllRent() );
+        cars.clear();
+        cars.addAll(  DataController.getInstance().getCars() );
         contactListAdapter.notifyDataSetChanged();
     }
-
 }

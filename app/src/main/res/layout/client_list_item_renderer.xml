@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Client:"
+        android:textSize="23dp"/>
+    <TextView
+        android:id="@+id/client_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/name"
+        android:textSize="23dp"/>
+
+    <TextView
+        android:id="@+id/client_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/address"
+        android:textSize="23dp"/>
+    <TextView
+        android:id="@+id/client_egn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="egn"
+        android:textSize="23dp"/>
+    <TextView
+        android:id="@+id/client_dln"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="driving license number"
+        android:textSize="23dp"/>
+    <TextView
+        android:id="@+id/client_dlexp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="driving license exp date"
+        android:textSize="23dp"/>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="4dp"
+        android:background="#c0c0c0"/>
+
+
+</LinearLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context=".AddActivity"
+    tools:context=".ViewActivity"
     android:weightSum="1">
 
     <LinearLayout
@@ -14,23 +14,23 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/addClient"
-            android:text="add client"
+            android:id="@+id/viewClient"
+            android:text="view clients"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             />
 
         <Button
-            android:id="@+id/addCar"
-            android:text="add car"
+            android:id="@+id/viewCar"
+            android:text="view cars"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             />
         <Button
-            android:id="@+id/addSale"
-            android:text="add rent"
+            android:id="@+id/viewSale"
+            android:text="view rents"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"

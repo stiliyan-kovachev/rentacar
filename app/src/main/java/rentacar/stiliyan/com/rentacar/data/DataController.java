@@ -36,8 +36,10 @@ public class DataController {
                 ClientVO client = new ClientVO();
                 client.id = c.getInt(c.getColumnIndex(DataBase.client_id));
                 client.name = c.getString(c.getColumnIndex(DataBase.key_client_name));
-//                client.address = c.getString(c.getColumnIndex(DataBase.key_address));
-//                client.phone = c.getString(c.getColumnIndex(DataBase.key_client_phone));
+                client.address = ( c.getString(c.getColumnIndex( DataBase.key_client_address ) ) );
+                client.egn = ( c.getLong(c.getColumnIndex( DataBase.key_client_egn ) ) );
+                client.driving_license_number = ( c.getLong(c.getColumnIndex( DataBase.key_client_driving_license_N ) ) );
+                client.driving_license_exp = new Date( c.getLong(c.getColumnIndex( DataBase.key_client_driving_license_exp ) ) );
                 clients.add(client);
             }
             while (c.moveToNext() );
@@ -51,10 +53,14 @@ public class DataController {
         List<CarVO> clients = new ArrayList<CarVO>();
         if ( c.moveToFirst() )
             do {
-                CarVO client = new CarVO();
-                client.id = c.getInt(c.getColumnIndex(DataBase.car_id));
-                client.brand = c.getString(c.getColumnIndex(DataBase.key_car_brand));
-                clients.add(client);
+                CarVO car = new CarVO();
+                car.id = c.getInt(c.getColumnIndex(DataBase.car_id));
+                car.brand = c.getString(c.getColumnIndex(DataBase.key_car_brand));
+                car.registrationNumber = ( c.getString(c.getColumnIndex( DataBase.key_car_registion_number ) ) );
+                car.numberOfSits = ( c.getInt(c.getColumnIndex( DataBase.key_car_number_sits ) ) );
+                car.spaceForLuggage = ( c.getInt(c.getColumnIndex( DataBase.key_car_space_for_luggage ) ) );
+                car.hasTechnicalInspection = ( c.getInt(c.getColumnIndex( DataBase.key_car_tech_inspection ) ) );
+                clients.add(car);
             }
             while (c.moveToNext() );
         db.close();
