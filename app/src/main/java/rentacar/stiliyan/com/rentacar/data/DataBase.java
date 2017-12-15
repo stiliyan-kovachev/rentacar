@@ -68,11 +68,25 @@ public class DataBase extends SQLiteOpenHelper {
         close();
     }
 
+    public void updateClient(int id, ContentValues contact ) {
+        open();
+
+        db.update(client_table_name, contact, client_id +  " = '" + id + "'", null );
+
+        close();
+    }public void updateCar(int id, ContentValues contact ) {
+        open();
+
+        db.update(car_table_name, contact, car_id +  " = '" + id + "'", null );
+
+        close();
+    }
+
     public Cursor getAllClients()
     {
         open();
 
-        Cursor cursor =  db.query(client_table_name, new String[]{client_id, key_client_name},null, null, null, null, null );
+        Cursor cursor =  db.query(client_table_name, new String[]{client_id, key_client_name, key_client_address, key_client_egn, key_client_driving_license_N, key_client_driving_license_exp},null, null, null, null, null );
 
 //        close();
 
@@ -85,7 +99,7 @@ public class DataBase extends SQLiteOpenHelper {
     {
         open();
 
-        Cursor cursor =  db.query(car_table_name, new String[]{car_id, key_car_brand},null, null, null, null, null );
+        Cursor cursor =  db.query(car_table_name, new String[]{car_id, key_car_brand, key_car_registion_number, key_car_number_sits, key_car_space_for_luggage, key_car_tech_inspection},null, null, null, null, null );
 
 //        close();
 
@@ -168,8 +182,22 @@ public class DataBase extends SQLiteOpenHelper {
     {
         open();
 
-//        db.rawQuery("delete from " + client_table_name + " " + "where " + key_id + " = '" + id + "'", null );
         db.delete(rent_table_name, rent_id + "=" + id, null );
+        close();
+    }
+
+    public void deleteClient(int id )
+    {
+        open();
+
+        db.delete(client_table_name, client_id + "=" + id, null );
+        close();
+    }
+    public void deleteCar(int id )
+    {
+        open();
+
+        db.delete(car_table_name, car_id + "=" + id, null );
         close();
     }
 

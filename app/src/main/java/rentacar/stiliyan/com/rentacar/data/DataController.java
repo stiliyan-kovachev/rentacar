@@ -76,6 +76,26 @@ public class DataController {
         db.updateRent( rent.id, values );
     }
 
+    public void updateCleint(ClientVO vo) {
+        ContentValues values = new ContentValues();
+        values.put( DataBase.key_client_name, vo.name );
+        values.put( DataBase.key_client_address, vo.address);
+        values.put( DataBase.key_client_egn, vo.egn);
+        values.put( DataBase.key_client_driving_license_N, vo.driving_license_number);
+        values.put( DataBase.key_client_driving_license_exp, vo.driving_license_exp.getTime());
+        db.updateClient( vo.id, values );
+    }
+
+    public void updateCar(CarVO vo) {
+        ContentValues values = new ContentValues();
+        values.put( DataBase.key_car_brand, vo.brand );
+        values.put( DataBase.key_car_registion_number, vo.registrationNumber );
+        values.put( DataBase.key_car_number_sits, vo.numberOfSits);
+        values.put( DataBase.key_car_space_for_luggage, vo.spaceForLuggage);
+        values.put( DataBase.key_car_tech_inspection, vo.hasTechnicalInspection);
+        db.updateCar( vo.id, values );
+    }
+
     public List<RentVO> getAllRent() {
         List<RentVO> allContacts = new ArrayList<>();
 
@@ -119,6 +139,16 @@ public class DataController {
     public  void deleteRent(int id )
     {
         db.deleteRent( id );
+    }
+
+    public  void deleteClient(int id )
+    {
+        db.deleteClient( id );
+    }
+
+    public  void deleteCar(int id )
+    {
+        db.deleteCar( id );
     }
 
     public void addCleint(ClientVO vo) {
