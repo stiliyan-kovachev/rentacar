@@ -106,8 +106,9 @@ public class AddRentActivity extends AppCompatActivity {
                             else
                             {
                                 rentTW.setError(null);
-                                period = (int) ((returnDate.getTime() - returnDate.getTime()) * 1.1574E-8);
-                                periodTV.setText(period + "days");
+                                double days = ((returnDate.getTime() - rentDate.getTime()) * 1.1574E-8);
+                                period = (int) days;
+                                periodTV.setText(period + " days");
                             }
                         }
                     }
@@ -136,8 +137,8 @@ public class AddRentActivity extends AppCompatActivity {
                             else
                             {
                                 returnTW.setError(null);
-                                period = (int) ((returnDate.getTime() - returnDate.getTime()) * 1.1574E-8);
-                                periodTV.setText(period + "days");
+                                period = (int) ((returnDate.getTime() - rentDate.getTime()) * 1.1574E-8);
+                                periodTV.setText(period + " days");
                             }
                         }
                     }

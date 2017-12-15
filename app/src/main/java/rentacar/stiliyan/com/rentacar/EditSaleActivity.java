@@ -81,6 +81,9 @@ public class EditSaleActivity extends AppCompatActivity {
         rentTW.setText(rentDate.toString());
         returnTW.setText(returnDate.toString());
 
+        periodTV.setText(period + " days");
+        priceET.setText(crrSale.price);
+
         List<String> clientNames = new ArrayList<>();
         List<String>carNames = new ArrayList<>();
 
@@ -115,6 +118,8 @@ public class EditSaleActivity extends AppCompatActivity {
         clients.setSelection(crrClientPosition);
         cars.setSelection(crrCarPosition);
 
+
+
         confirm.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick( View view ) {
@@ -143,8 +148,8 @@ public class EditSaleActivity extends AppCompatActivity {
                             else
                             {
                                 rentTW.setError(null);
-                                period = (int) ((returnDate.getTime() - returnDate.getTime()) * 1.1574E-8);
-                                periodTV.setText(period + "days");
+                                period = (int) ((returnDate.getTime() - rentDate.getTime()) * 1.1574E-8);
+                                periodTV.setText(period + " days");
                             }
                         }
                     }
@@ -173,8 +178,8 @@ public class EditSaleActivity extends AppCompatActivity {
                             else
                             {
                                 returnTW.setError(null);
-                                period = (int) ((returnDate.getTime() - returnDate.getTime()) * 1.1574E-8);
-                                periodTV.setText(period + "days");
+                                period = (int) ((returnDate.getTime() - rentDate.getTime()) * 1.1574E-8);
+                                periodTV.setText(period + " days");
                             }
                         }
                     }
