@@ -89,7 +89,7 @@ public class SalesForPeriodActivity extends AppCompatActivity {
                 else
                   toTW.setError(null);
 
-                List<RentVO> sales = DataController.getInstance().salesForPeriod(from.getTime(), to.getTime() );
+                List<RentVO> sales = DataController.getInstance().rentsForPeriod(from.getTime(), to.getTime() );
                 contactListAdapter = new SaleListAdapter( SalesForPeriodActivity.this, R.layout.sale_list_item_renderer, sales );
                 salesList.setAdapter( contactListAdapter );
             }

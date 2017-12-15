@@ -154,7 +154,7 @@ public class DataBase extends SQLiteOpenHelper {
         return  cursor;
     }
 
-    public  Cursor salesForPeriod( long from, long to ){
+    public  Cursor rentsForPeriod(long from, long to ){
         open();
         Cursor cursor = db.rawQuery( "select * from (select " + "*" + " from " +rent_table_name +
                 " inner join " +client_table_name +" on " + rent_table_name +"."  + client_id + " = "+client_table_name +"." + client_id +
@@ -164,7 +164,7 @@ public class DataBase extends SQLiteOpenHelper {
         return  cursor;
     }
 
-    public void deleteSale( int id )
+    public void deleteRent(int id )
     {
         open();
 

@@ -62,7 +62,7 @@ public class DataController {
         return clients;
     }
 
-    public void updateSale( RentVO rent ) {
+    public void updateRent(RentVO rent ) {
 
         ContentValues values = new ContentValues();
 //        values.put( DataBase.sale_id, sale.id );
@@ -76,7 +76,7 @@ public class DataController {
         db.updateRent( rent.id, values );
     }
 
-    public List<RentVO> getAllSales() {
+    public List<RentVO> getAllRent() {
         List<RentVO> allContacts = new ArrayList<>();
 
         Cursor c = db.getAllRent();
@@ -116,9 +116,9 @@ public class DataController {
     }
 
 
-    public  void deleteSale( int id )
+    public  void deleteRent(int id )
     {
-        db.deleteSale( id );
+        db.deleteRent( id );
     }
 
     public void addCleint(ClientVO vo) {
@@ -152,7 +152,7 @@ public class DataController {
         db.addRent( values );
     }
 
-    public RentVO getSaleById(int saleID) {
+    public RentVO getRentById(int saleID) {
         RentVO sale = new RentVO();
 
         Cursor c = db.getRentById( saleID );
@@ -287,9 +287,9 @@ public class DataController {
         return models;
     }
 
-    public List<RentVO> salesForPeriod( long from, long to ){
+    public List<RentVO> rentsForPeriod(long from, long to ){
         List<RentVO> models = new ArrayList<>();
-        Cursor c = db.salesForPeriod( from, to );
+        Cursor c = db.rentsForPeriod( from, to );
 
         if ( c.moveToFirst() )
             do {

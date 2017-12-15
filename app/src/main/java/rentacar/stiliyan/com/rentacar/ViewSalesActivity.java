@@ -29,7 +29,7 @@ public class ViewSalesActivity extends AppCompatActivity {
 
         salesList = (ListView) findViewById( R.id.salesList );
 
-        salesData = DataController.getInstance().getAllSales();
+        salesData = DataController.getInstance().getAllRent();
 
         contactListAdapter = new SaleListAdapter( this, R.layout.sale_list_item_renderer, salesData );
         salesList.setAdapter( contactListAdapter );
@@ -56,7 +56,7 @@ public class ViewSalesActivity extends AppCompatActivity {
                         }
                         else
                         if ( item == 1 ) {
-                            DataController.getInstance().deleteSale( model.id );
+                            DataController.getInstance().deleteRent( model.id );
                             updateList();
                         }
                     }
@@ -86,7 +86,7 @@ public class ViewSalesActivity extends AppCompatActivity {
     private void updateList()
     {
         salesData.clear();
-        salesData.addAll(  DataController.getInstance().getAllSales() );
+        salesData.addAll(  DataController.getInstance().getAllRent() );
         contactListAdapter.notifyDataSetChanged();
     }
 

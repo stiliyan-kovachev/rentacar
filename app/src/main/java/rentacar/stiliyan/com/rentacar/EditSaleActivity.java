@@ -14,7 +14,6 @@ import android.widget.Toast;
 
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -69,7 +68,7 @@ public class EditSaleActivity extends AppCompatActivity {
         periodTV = (TextView) findViewById(R.id.period_tv);
         priceET = (EditText) findViewById(R.id.price_et);
 
-        crrSale = DataController.getInstance().getSaleById( saleID );
+        crrSale = DataController.getInstance().getRentById( saleID );
         clientsList = DataController.getInstance().getClients();
         carsList = DataController.getInstance().getCars();
 
@@ -233,7 +232,7 @@ public class EditSaleActivity extends AppCompatActivity {
         sale.period = period;
         sale.price = Integer.valueOf(priceET.getText().toString());
 
-        DataController.getInstance().updateSale(sale);
+        DataController.getInstance().updateRent(sale);
 
         Intent returnIntent = new Intent();
         setResult( Activity.RESULT_OK, returnIntent);
