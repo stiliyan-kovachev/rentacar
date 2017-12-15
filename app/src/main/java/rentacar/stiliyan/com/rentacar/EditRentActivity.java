@@ -43,9 +43,9 @@ public class EditRentActivity extends AppCompatActivity {
     private List<ClientVO> clientsList;
     private List<CarVO> carsList;
 
-    private int saleID = -1;
+    private int rentID = -1;
 
-    private RentVO crrSale;
+    private RentVO crrRent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +56,7 @@ public class EditRentActivity extends AppCompatActivity {
         Bundle bd = intent.getExtras();
 
         if(bd != null)
-            saleID = bd.getInt(Consts.ID );
+            rentID = bd.getInt(Consts.ID );
 
         clients = (Spinner) findViewById(R.id.clients);
         cars = (Spinner) findViewById(R.id.cars);
@@ -68,20 +68,20 @@ public class EditRentActivity extends AppCompatActivity {
         periodTV = (TextView) findViewById(R.id.period_tv);
         priceET = (EditText) findViewById(R.id.price_et);
 
-        crrSale = DataController.getInstance().getRentById( saleID );
+        crrRent = DataController.getInstance().getRentById(rentID);
         clientsList = DataController.getInstance().getClients();
         carsList = DataController.getInstance().getCars();
 
-        rentDate = crrSale.rentDate;
-        returnDate = crrSale.rentDate;
+        rentDate = crrRent.rentDate;
+        returnDate = crrRent.rentDate;
 
-        period = crrSale.period;
+        period = crrRent.period;
 
         rentTW.setText(rentDate.toString());
         returnTW.setText(returnDate.toString());
 
         periodTV.setText(period + " days");
-        priceET.setText(String.valueOf(crrSale.price));
+        priceET.setText(String.valueOf(crrRent.price));
 
         List<String> clientNames = new ArrayList<>();
         List<String>carNames = new ArrayList<>();
@@ -91,7 +91,7 @@ public class EditRentActivity extends AppCompatActivity {
 
         for ( int i = 0; i<clientsList.size();i++)
         {
-            if ( crrSale.client.id == clientsList.get(i).id)
+            if ( crrRent.client.id == clientsList.get(i).id)
                 crrClientPosition = i;
 
             clientNames.add(clientsList.get(i).name);
@@ -99,7 +99,7 @@ public class EditRentActivity extends AppCompatActivity {
 
         for ( int i = 0; i<carsList.size();i++)
         {
-            if ( crrSale.car.id == carsList.get(i).id)
+            if ( crrRent.car.id == carsList.get(i).id)
                 crrCarPosition = i;
 
             carNames.add(carsList.get(i).brand);
@@ -131,7 +131,7 @@ public class EditRentActivity extends AppCompatActivity {
             public void onClick( View view ) {
                 DatePickerFragment newFragment = new DatePickerFragment();
                 newFragment.show(getSupportFragmentManager(), "datePicker");
-                newFragment.setTmeCallback(new SalesForPeriodActivity.TimeSet() {
+                newFragment.setTmeCallback(new RentsForPeriodActivity.TimeSet() {
                     @Override
                     public void onTimeSet(Date date) {
                         rentTW.setText( date.toString());
@@ -161,7 +161,7 @@ public class EditRentActivity extends AppCompatActivity {
             public void onClick( View view ) {
                 DatePickerFragment newFragment = new DatePickerFragment();
                 newFragment.show(getSupportFragmentManager(), "datePicker");
-                newFragment.setTmeCallback(new SalesForPeriodActivity.TimeSet() {
+                newFragment.setTmeCallback(new RentsForPeriodActivity.TimeSet() {
                     @Override
                     public void onTimeSet(Date date) {
                         returnTW.setText( date.toString());
@@ -223,16 +223,16 @@ public class EditRentActivity extends AppCompatActivity {
         else
             returnTW.setError( null );
 
-        RentVO sale = new RentVO();
-        sale.client = clientsList.get(clients.getSelectedItemPosition());
-        sale.car = carsList.get(cars.getSelectedItemPosition());
+        RentVO rent = new RentVO();
+        rent.client = clientsList.get(clients.getSelectedItemPosition());
+        rent.car = carsList.get(cars.getSelectedItemPosition());
 
-        sale.rentDate = rentDate;
-        sale.returnDate = returnDate;
-        sale.period = period;
-        sale.price = Integer.valueOf(priceET.getText().toString());
+        rent.rentDate = rentDate;
+        rent.returnDate = returnDate;
+        rent.period = period;
+        rent.price = Integer.valueOf(priceET.getText().toString());
 
-        DataController.getInstance().updateRent(sale);
+        DataController.getInstance().updateRent(rent);
 
         Intent returnIntent = new Intent();
         setResult( Activity.RESULT_OK, returnIntent);

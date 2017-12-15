@@ -32,7 +32,7 @@ public class ViewCarsActivity extends AppCompatActivity {
 
         cars = DataController.getInstance().getCars();
 
-        contactListAdapter = new CarsListAdapter( this, R.layout.sale_list_item_renderer, cars );
+        contactListAdapter = new CarsListAdapter( this, R.layout.rent_list_item_renderer, cars );
         carsList.setAdapter( contactListAdapter );
 
         carsList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {

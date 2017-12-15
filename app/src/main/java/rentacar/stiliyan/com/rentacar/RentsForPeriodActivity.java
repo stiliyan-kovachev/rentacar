@@ -10,12 +10,12 @@ import android.widget.TextView;
 import java.util.Date;
 import java.util.List;
 
-import rentacar.stiliyan.com.rentacar.adapter.SaleListAdapter;
+import rentacar.stiliyan.com.rentacar.adapter.RentListAdapter;
 import rentacar.stiliyan.com.rentacar.data.DataController;
 import rentacar.stiliyan.com.rentacar.data.RentVO;
 import rentacar.stiliyan.com.rentacar.utils.DatePickerFragment;
 
-public class SalesForPeriodActivity extends AppCompatActivity {
+public class RentsForPeriodActivity extends AppCompatActivity {
 
     private Button fromBtn;
     private TextView fromTW;
@@ -23,8 +23,8 @@ public class SalesForPeriodActivity extends AppCompatActivity {
     private TextView toTW;
     private Button sortBtn;
 
-    private SaleListAdapter contactListAdapter;
-    private ListView salesList;
+    private RentListAdapter contactListAdapter;
+    private ListView rentsList;
 
     private Date from;
     private Date to;
@@ -32,7 +32,7 @@ public class SalesForPeriodActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sales_for_period);
+        setContentView(R.layout.activity_rent_for_period);
 
         fromBtn = (Button) findViewById(R.id.fromBtn);
         fromTW = (TextView) findViewById(R.id.from);
@@ -40,7 +40,7 @@ public class SalesForPeriodActivity extends AppCompatActivity {
         toTW = (TextView) findViewById(R.id.to);
         sortBtn = (Button) findViewById(R.id.sort);
 
-        salesList = (ListView) findViewById( R.id.salesList );
+        rentsList = (ListView) findViewById( R.id.salesList );
 
         fromBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,8 +90,8 @@ public class SalesForPeriodActivity extends AppCompatActivity {
                   toTW.setError(null);
 
                 List<RentVO> sales = DataController.getInstance().rentsForPeriod(from.getTime(), to.getTime() );
-                contactListAdapter = new SaleListAdapter( SalesForPeriodActivity.this, R.layout.sale_list_item_renderer, sales );
-                salesList.setAdapter( contactListAdapter );
+                contactListAdapter = new RentListAdapter( RentsForPeriodActivity.this, R.layout.rent_list_item_renderer, sales );
+                rentsList.setAdapter( contactListAdapter );
             }
         });
     }

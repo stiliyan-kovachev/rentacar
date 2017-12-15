@@ -30,7 +30,7 @@
             android:label="@string/title_activity_add"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".ViewSalesActivity"
+            android:name=".ViewRentsActivity"
             android:label="@string/title_activity_view_sales"
             android:theme="@style/AppTheme" />
         <activity
@@ -46,7 +46,7 @@
             android:label="@string/title_activity_last_five"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".SalesForPeriodActivity"
+            android:name=".RentsForPeriodActivity"
             android:label="@string/title_activity_sales_for_period"
             android:theme="@style/AppTheme" />
         <activity

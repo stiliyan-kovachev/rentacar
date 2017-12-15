@@ -90,7 +90,7 @@ public class AddRentActivity extends AppCompatActivity {
             public void onClick( View view ) {
                 DatePickerFragment newFragment = new DatePickerFragment();
                 newFragment.show(getSupportFragmentManager(), "datePicker");
-                newFragment.setTmeCallback(new SalesForPeriodActivity.TimeSet() {
+                newFragment.setTmeCallback(new RentsForPeriodActivity.TimeSet() {
                     @Override
                     public void onTimeSet(Date date) {
                         rentTW.setText( date.toString());
@@ -121,7 +121,7 @@ public class AddRentActivity extends AppCompatActivity {
             public void onClick( View view ) {
                 DatePickerFragment newFragment = new DatePickerFragment();
                 newFragment.show(getSupportFragmentManager(), "datePicker");
-                newFragment.setTmeCallback(new SalesForPeriodActivity.TimeSet() {
+                newFragment.setTmeCallback(new RentsForPeriodActivity.TimeSet() {
                     @Override
                     public void onTimeSet(Date date) {
                         returnTW.setText( date.toString());
@@ -182,16 +182,16 @@ public class AddRentActivity extends AppCompatActivity {
         else
             returnTW.setError( null );
 
-        RentVO sale = new RentVO();
-        sale.client = clientsList.get(clients.getSelectedItemPosition());
-        sale.car = carsList.get(cars.getSelectedItemPosition());
+        RentVO rent = new RentVO();
+        rent.client = clientsList.get(clients.getSelectedItemPosition());
+        rent.car = carsList.get(cars.getSelectedItemPosition());
 
-        sale.rentDate = rentDate;
-        sale.returnDate = returnDate;
-        sale.period = period;
-        sale.price = Integer.valueOf(priceET.getText().toString());
+        rent.rentDate = rentDate;
+        rent.returnDate = returnDate;
+        rent.period = period;
+        rent.price = Integer.valueOf(priceET.getText().toString());
 
-        DataController.getInstance().addRent(sale);
+        DataController.getInstance().addRent(rent);
         finish();
     }
 }

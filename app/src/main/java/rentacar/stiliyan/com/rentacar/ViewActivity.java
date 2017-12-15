@@ -40,7 +40,7 @@ public class ViewActivity extends AppCompatActivity {
         viewRentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick( View view ) {
-                Intent intent = new Intent( ViewActivity.this, ViewSalesActivity.class );
+                Intent intent = new Intent( ViewActivity.this, ViewRentsActivity.class );
                 startActivity( intent );
             }
         });

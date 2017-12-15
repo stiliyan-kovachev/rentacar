@@ -59,7 +59,7 @@ public class EditClientActivity extends AppCompatActivity {
             public void onClick(View view) {
                 DatePickerFragment newFragment = new DatePickerFragment();
                 newFragment.show(getSupportFragmentManager(), "datePicker");
-                newFragment.setTmeCallback(new SalesForPeriodActivity.TimeSet() {
+                newFragment.setTmeCallback(new RentsForPeriodActivity.TimeSet() {
                     @Override
                     public void onTimeSet(Date date) {
                         dlExpTV.setText( date.toString());

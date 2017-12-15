@@ -6,10 +6,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.util.Date;
 
@@ -48,7 +45,7 @@ public class AddClientActivity extends AppCompatActivity {
             public void onClick(View view) {
                 DatePickerFragment newFragment = new DatePickerFragment();
                 newFragment.show(getSupportFragmentManager(), "datePicker");
-                newFragment.setTmeCallback(new SalesForPeriodActivity.TimeSet() {
+                newFragment.setTmeCallback(new RentsForPeriodActivity.TimeSet() {
                     @Override
                     public void onTimeSet(Date date) {
                         dlExpTV.setText( date.toString());

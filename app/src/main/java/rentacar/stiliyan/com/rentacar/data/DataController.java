@@ -71,7 +71,6 @@ public class DataController {
     public void updateRent(RentVO rent ) {
 
         ContentValues values = new ContentValues();
-//        values.put( DataBase.sale_id, sale.id );
         values.put ( DataBase.key_rented_date, rent.rentDate.getTime() );
         values.put ( DataBase.key_return_date, rent.returnDate.getTime() );
         values.put ( DataBase.key_rent_period, rent.period );
@@ -188,39 +187,39 @@ public class DataController {
         db.addRent( values );
     }
 
-    public RentVO getRentById(int saleID) {
-        RentVO sale = new RentVO();
+    public RentVO getRentById(int rentID) {
+        RentVO rent = new RentVO();
 
-        Cursor c = db.getRentById( saleID );
+        Cursor c = db.getRentById(rentID);
         if ( c.moveToFirst() )
             do {
-                sale.id = ( c.getInt(c.getColumnIndex( DataBase.rent_id) ) );
-                sale.rentDate = new Date( c.getLong(c.getColumnIndex( DataBase.key_rented_date) ) );
-                sale.returnDate = new Date( c.getLong(c.getColumnIndex( DataBase.key_return_date) ) );
-                sale.period = c.getInt(c.getColumnIndex( DataBase.key_rent_period) );
-                sale.price = c.getInt(c.getColumnIndex( DataBase.key_rent_price) );
+                rent.id = ( c.getInt(c.getColumnIndex( DataBase.rent_id) ) );
+                rent.rentDate = new Date( c.getLong(c.getColumnIndex( DataBase.key_rented_date) ) );
+                rent.returnDate = new Date( c.getLong(c.getColumnIndex( DataBase.key_return_date) ) );
+                rent.period = c.getInt(c.getColumnIndex( DataBase.key_rent_period) );
+                rent.price = c.getInt(c.getColumnIndex( DataBase.key_rent_price) );
 
-                sale.client = new ClientVO();
-                sale.client.id = ( c.getInt(c.getColumnIndex( DataBase.client_id ) ) );
-                sale.client.name = ( c.getString(c.getColumnIndex( DataBase.key_client_name ) ) );
-                sale.client.address = ( c.getString(c.getColumnIndex( DataBase.key_client_address ) ) );
-                sale.client.egn = ( c.getLong(c.getColumnIndex( DataBase.key_client_egn ) ) );
-                sale.client.driving_license_number = ( c.getLong(c.getColumnIndex( DataBase.key_client_driving_license_N ) ) );
-                sale.client.driving_license_exp = new Date( c.getLong(c.getColumnIndex( DataBase.key_client_driving_license_exp ) ) );
+                rent.client = new ClientVO();
+                rent.client.id = ( c.getInt(c.getColumnIndex( DataBase.client_id ) ) );
+                rent.client.name = ( c.getString(c.getColumnIndex( DataBase.key_client_name ) ) );
+                rent.client.address = ( c.getString(c.getColumnIndex( DataBase.key_client_address ) ) );
+                rent.client.egn = ( c.getLong(c.getColumnIndex( DataBase.key_client_egn ) ) );
+                rent.client.driving_license_number = ( c.getLong(c.getColumnIndex( DataBase.key_client_driving_license_N ) ) );
+                rent.client.driving_license_exp = new Date( c.getLong(c.getColumnIndex( DataBase.key_client_driving_license_exp ) ) );
 
-                sale.car = new CarVO();
-                sale.car.id = ( c.getInt(c.getColumnIndex( DataBase.car_id ) ) );
-                sale.car.brand = ( c.getString(c.getColumnIndex( DataBase.key_car_brand ) ) );
-                sale.car.registrationNumber = ( c.getString(c.getColumnIndex( DataBase.key_car_registion_number ) ) );
-                sale.car.numberOfSits = ( c.getInt(c.getColumnIndex( DataBase.key_car_number_sits ) ) );
-                sale.car.hasTechnicalInspection = ( c.getInt(c.getColumnIndex( DataBase.key_car_tech_inspection ) ) );
-                sale.car.spaceForLuggage = ( c.getInt(c.getColumnIndex( DataBase.key_car_space_for_luggage ) ) );
+                rent.car = new CarVO();
+                rent.car.id = ( c.getInt(c.getColumnIndex( DataBase.car_id ) ) );
+                rent.car.brand = ( c.getString(c.getColumnIndex( DataBase.key_car_brand ) ) );
+                rent.car.registrationNumber = ( c.getString(c.getColumnIndex( DataBase.key_car_registion_number ) ) );
+                rent.car.numberOfSits = ( c.getInt(c.getColumnIndex( DataBase.key_car_number_sits ) ) );
+                rent.car.hasTechnicalInspection = ( c.getInt(c.getColumnIndex( DataBase.key_car_tech_inspection ) ) );
+                rent.car.spaceForLuggage = ( c.getInt(c.getColumnIndex( DataBase.key_car_space_for_luggage ) ) );
             }
             while ( c.moveToNext() );
 
         db.close();
 
-        return sale;
+        return rent;
     }
 
     public CarVO getCarById(int id) {

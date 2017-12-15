@@ -38,7 +38,7 @@ public class RentedCarsByClientActivity extends AppCompatActivity {
         carsList = (ListView ) findViewById( R.id.carsList );
         confirmBtn = ( Button ) findViewById( R.id.confirm );
 
-        contactListAdapter = new CarsListAdapter( this, R.layout.sale_list_item_renderer, cars );
+        contactListAdapter = new CarsListAdapter( this, R.layout.rent_list_item_renderer, cars );
         carsList.setAdapter( contactListAdapter );
 
         clientList = DataController.getInstance().getClients();

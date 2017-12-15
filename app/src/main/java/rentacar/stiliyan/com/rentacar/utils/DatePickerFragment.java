@@ -8,10 +8,10 @@ import android.widget.DatePicker;
 
 import java.util.Calendar;
 
-import rentacar.stiliyan.com.rentacar.SalesForPeriodActivity;
+import rentacar.stiliyan.com.rentacar.RentsForPeriodActivity;
 
 public class DatePickerFragment extends DialogFragment implements DatePickerDialog.OnDateSetListener {
-    private SalesForPeriodActivity.TimeSet timeset;
+    private RentsForPeriodActivity.TimeSet timeset;
     private Calendar c;
 
     public DatePickerFragment( Calendar c ){
@@ -34,7 +34,7 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
         return new DatePickerDialog(getActivity(), this, year, month, day);
     }
 
-    public void setTmeCallback(SalesForPeriodActivity.TimeSet timeset)
+    public void setTmeCallback(RentsForPeriodActivity.TimeSet timeset)
     {
         this.timeset = timeset;
     }

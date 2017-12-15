@@ -12,13 +12,13 @@ import java.util.List;
 import rentacar.stiliyan.com.rentacar.R;
 import rentacar.stiliyan.com.rentacar.data.RentVO;
 
-public class SaleListAdapter extends ArrayAdapter<RentVO> {
+public class RentListAdapter extends ArrayAdapter<RentVO> {
 
-    public SaleListAdapter(Context context, int textViewResourceId ) {
+    public RentListAdapter(Context context, int textViewResourceId ) {
         super( context, textViewResourceId );
     }
 
-    public SaleListAdapter(Context context, int resource, List<RentVO> items ) {
+    public RentListAdapter(Context context, int resource, List<RentVO> items ) {
         super( context, resource, items );
     }
 
@@ -30,7 +30,7 @@ public class SaleListAdapter extends ArrayAdapter<RentVO> {
         if ( v == null ) {
             LayoutInflater vi;
             vi = LayoutInflater.from( getContext() );
-            v = vi.inflate( R.layout.sale_list_item_renderer, null );
+            v = vi.inflate( R.layout.rent_list_item_renderer, null );
         }
 
         RentVO p = getItem( position );

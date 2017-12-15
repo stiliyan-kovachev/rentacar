@@ -11,9 +11,7 @@ import android.widget.ListView;
 
 import java.util.List;
 
-import rentacar.stiliyan.com.rentacar.adapter.CarsListAdapter;
 import rentacar.stiliyan.com.rentacar.adapter.ClientListAdapter;
-import rentacar.stiliyan.com.rentacar.data.CarVO;
 import rentacar.stiliyan.com.rentacar.data.ClientVO;
 import rentacar.stiliyan.com.rentacar.data.DataController;
 import rentacar.stiliyan.com.rentacar.utils.Consts;
@@ -34,7 +32,7 @@ public class ViewClientsActivity extends AppCompatActivity {
 
         clients = DataController.getInstance().getClients();
 
-        contactListAdapter = new ClientListAdapter( this, R.layout.sale_list_item_renderer, clients);
+        contactListAdapter = new ClientListAdapter( this, R.layout.rent_list_item_renderer, clients);
         clientsList.setAdapter( contactListAdapter );
 
         clientsList.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {

@@ -34,7 +34,7 @@ public class InquiriesActivity extends AppCompatActivity {
         salesForPeriodBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent( InquiriesActivity.this, SalesForPeriodActivity.class );
+                Intent intent = new Intent( InquiriesActivity.this, RentsForPeriodActivity.class );
                 startActivity( intent );
             }
         });
