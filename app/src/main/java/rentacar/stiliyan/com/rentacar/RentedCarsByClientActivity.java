@@ -71,7 +71,7 @@ public class RentedCarsByClientActivity extends AppCompatActivity {
         int customerId = clientList.get( clients.getSelectedItemPosition() ).id;
 
         cars.clear();
-        cars.addAll( DataController.getInstance().boughtCarsByClient( customerId ));
+        cars.addAll( DataController.getInstance().rentCarsByClient( customerId ));
         contactListAdapter.notifyDataSetChanged();
     }
 

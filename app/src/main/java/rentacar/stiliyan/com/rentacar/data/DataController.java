@@ -73,13 +73,13 @@ public class DataController {
         values.put( DataBase.client_id, rent.client.id );
         values.put( DataBase.car_id, rent.car.id );
 
-        db.updateSale( rent.id, values );
+        db.updateRent( rent.id, values );
     }
 
     public List<RentVO> getAllSales() {
         List<RentVO> allContacts = new ArrayList<>();
 
-        Cursor c = db.getAllSales();
+        Cursor c = db.getAllRent();
         if ( c.moveToFirst() )
             do {
 
@@ -149,13 +149,13 @@ public class DataController {
         values.put( DataBase.key_return_date, vo.returnDate.getTime());
         values.put( DataBase.key_rent_period, vo.period);
         values.put( DataBase.key_rent_price, vo.price);
-        db.addSale( values );
+        db.addRent( values );
     }
 
     public RentVO getSaleById(int saleID) {
         RentVO sale = new RentVO();
 
-        Cursor c = db.getSaleById( saleID );
+        Cursor c = db.getRentById( saleID );
         if ( c.moveToFirst() )
             do {
                 sale.id = ( c.getInt(c.getColumnIndex( DataBase.rent_id) ) );
@@ -227,10 +227,10 @@ public class DataController {
         return models;
     }
 
-    public List<CarVO> boughtCarsByClient( int clientId ){
+    public List<CarVO> rentCarsByClient(int clientId ){
         List<CarVO> models = new ArrayList<>();
 
-        Cursor c = db.boughtCarsByClient(clientId );
+        Cursor c = db.RentCarsByClient(clientId );
         if ( c.moveToFirst() )
             do {
                 CarVO model = new CarVO();

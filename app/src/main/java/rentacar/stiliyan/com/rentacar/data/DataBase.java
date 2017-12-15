@@ -54,13 +54,13 @@ public class DataBase extends SQLiteOpenHelper {
         close();
     }
 
-    public void addSale(ContentValues client) {
+    public void addRent(ContentValues client) {
         open();
         db.insert(rent_table_name, null, client );
         close();
     }
 
-    public void updateSale(int id, ContentValues contact ) {
+    public void updateRent(int id, ContentValues contact ) {
         open();
 
         db.update(rent_table_name, contact, rent_id +  " = '" + id + "'", null );
@@ -93,7 +93,7 @@ public class DataBase extends SQLiteOpenHelper {
 
     }
 
-    public Cursor getAllSales()
+    public Cursor getAllRent()
     {
         open();
 
@@ -108,7 +108,7 @@ public class DataBase extends SQLiteOpenHelper {
 
     }
 
-    public Cursor getSaleById( int id )
+    public Cursor getRentById(int id )
     {
         open();
 
@@ -133,7 +133,7 @@ public class DataBase extends SQLiteOpenHelper {
         return  cursor;
     }
 
-    public  Cursor boughtCarsByClient( int clientId ){
+    public  Cursor RentCarsByClient(int clientId ){
         open();
         Cursor cursor = db.rawQuery( "select " + car_id +"," + key_car_brand +"," + key_car_registion_number + "," + key_car_number_sits + "," + key_car_space_for_luggage + ","  + key_car_tech_inspection +
                 " from (select * from " + rent_table_name +
