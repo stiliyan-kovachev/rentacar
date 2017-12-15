@@ -40,19 +40,14 @@
         <item>Male</item>
         <item>Female</item>
     </string-array>
-    <string name="title_activity_edit_contact">EditContactActivity</string>
-    <string name="title_activity_add_customer">AddCustomer</string>
+    <string name="title_activity_add_client">AddClient</string>
     <string name="title_activity_add_caractivity">AddCaractivity</string>
     <string name="title_activity_add">AddActivity</string>
-    <string name="title_activity_view_sales">ViewSalesActivity</string>
-    <string name="title_activity_edit_sale">EditSaleActivity</string>
+    <string name="title_activity_view_sales">ViewRentsActivity</string>
+    <string name="title_activity_edit_sale">EditRentActivity</string>
     <string name="title_activity_inquiries">InquiriesActivity</string>
     <string name="title_activity_last_five">LastFiveActivity</string>
-    <string name="title_activity_sales_for_period">SalesForPeriodActivity</string>
-    <string name="title_activity_saled_cars_from_customer">SaledCarsFromCustomerActivity</string>
-    <string name="title_activity_boght_cars_by_client">BoghtCarsByClientActivity</string>
-    <string name="title_activity_add_creditcard">AddCreditcardActivity</string>
-    <string name="title_activity_add_insurance">AddInsuranceActivity</string>
-    <string name="title_activity_cars_insurated">CarsInsuratedActivity</string>
+    <string name="title_activity_sales_for_period">RentsForPeriodActivity</string>
+    <string name="title_activity_boght_cars_by_client">RentCarsByClientActivity</string>
 
 </resources>

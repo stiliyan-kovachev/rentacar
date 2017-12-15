@@ -27,7 +27,7 @@ public class DataBase extends SQLiteOpenHelper {
     public  static  final String key_car_brand     = "car_brand";
     public  static  final String key_car_number_sits     = "car_sits";
     public  static  final String key_car_space_for_luggage     = "car_space_luggage";
-    public  static  final String key_car_tech_inspection     = "car_space_luggage";
+    public  static  final String key_car_tech_inspection     = "car_tech_inspection";
     public  static  final String rent_id     = "rent_id";
     public  static  final String key_rented_date   = "rented_date";
     public  static  final String key_return_date   = "return_date";

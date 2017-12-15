@@ -16,6 +16,43 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".AddClientActivity"
+            android:label="@string/title_activity_add_client"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".AddCarActivity"
+            android:label="@string/title_activity_add_caractivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".AddRentActivity" />
+        <activity
+            android:name=".AddActivity"
+            android:label="@string/title_activity_add"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ViewSalesActivity"
+            android:label="@string/title_activity_view_sales"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".EditSaleActivity"
+            android:label="@string/title_activity_edit_sale"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".InquiriesActivity"
+            android:label="@string/title_activity_inquiries"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".LastFiveActivity"
+            android:label="@string/title_activity_last_five"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".SalesForPeriodActivity"
+            android:label="@string/title_activity_sales_for_period"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".RentedCarsByClientActivity"
+            android:label="@string/title_activity_boght_cars_by_client"
+            android:theme="@style/AppTheme" />
     </application>
 
 </manifest>
