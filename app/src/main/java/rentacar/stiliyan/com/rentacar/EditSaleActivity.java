@@ -82,7 +82,7 @@ public class EditSaleActivity extends AppCompatActivity {
         returnTW.setText(returnDate.toString());
 
         periodTV.setText(period + " days");
-        priceET.setText(crrSale.price);
+        priceET.setText(String.valueOf(crrSale.price));
 
         List<String> clientNames = new ArrayList<>();
         List<String>carNames = new ArrayList<>();
