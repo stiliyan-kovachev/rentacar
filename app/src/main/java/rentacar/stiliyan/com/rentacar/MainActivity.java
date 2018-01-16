@@ -10,10 +10,6 @@ import rentacar.stiliyan.com.rentacar.data.DataController;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button addBtn;
-    private Button viewSalesBtn;
-    private Button inquiriesBtn;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,9 +17,9 @@ public class MainActivity extends AppCompatActivity {
 
         DataController.getInstance().setContext( this );
 
-        addBtn = (Button) findViewById(R.id.add);
-        viewSalesBtn = (Button) findViewById(R.id.viewSales);
-        inquiriesBtn = (Button) findViewById(R.id.inquiries);
+        Button addBtn = (Button) findViewById(R.id.add);
+        Button viewSalesBtn = (Button) findViewById(R.id.viewSales);
+        Button inquiriesBtn = (Button) findViewById(R.id.inquiries);
 
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,6 +44,5 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 }
